@@ -1,6 +1,5 @@
 package com.example.rickandmortycharacters.domain.usecases
 
-import androidx.lifecycle.LiveData
 import com.example.rickandmortycharacters.domain.models.Character
 import com.example.rickandmortycharacters.domain.repository.CharacterRepository
 
@@ -9,5 +8,5 @@ import com.example.rickandmortycharacters.domain.repository.CharacterRepository
  */
 class GetCharactersListUseCase(private val repository: CharacterRepository) {
 
-    operator fun invoke(): LiveData<Character> = repository.getCharacterList()
+    suspend operator fun invoke(page: Int): List<Character> = repository.getCharacterList(page)
 }

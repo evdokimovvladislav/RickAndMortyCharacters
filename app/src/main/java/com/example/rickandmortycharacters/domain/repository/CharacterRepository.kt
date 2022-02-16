@@ -1,6 +1,5 @@
 package com.example.rickandmortycharacters.domain.repository
 
-import androidx.lifecycle.LiveData
 import com.example.rickandmortycharacters.domain.models.Character
 
 /**
@@ -8,5 +7,5 @@ import com.example.rickandmortycharacters.domain.models.Character
  */
 interface CharacterRepository {
 
-    fun getCharacterList(): LiveData<Character>
+    suspend fun getCharacterList(page: Int): List<Character>
 }
