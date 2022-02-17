@@ -9,7 +9,7 @@ import retrofit2.http.Query
  */
 interface CharactersApiService {
 
-    @GET("character/")
+    @GET(NetworkConst.END_POINT)
     suspend fun getCharacters(
         @Query("page") page: Int,
     ): BaseResponseDto
